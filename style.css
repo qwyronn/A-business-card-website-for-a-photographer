@@ -1,0 +1,445 @@
+/* Сброс базовых стилей и настройка шрифтов(Reset basic styles and font setup) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000; /* Чёрный фон(Black background) */
+    color: #fff; /* Белый текст(White text) */
+    line-height: 1.6;
+}
+
+/* Навигация(Navigation) */
+.navbar {
+    background-color: #000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+}
+
+.navbar a:hover {
+    color: #D4AF37; /* Золотой акцент(Golden accent) */
+}
+
+/* Герой-секция(Hero section) */
+.hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-slogan {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #D4AF37; /* Золотой(Golden) */
+    max-width: 800px;
+}
+
+.hero-button {
+    background-color: #D4AF37;
+    color: #000;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    border: 2px solid #D4AF37;
+}
+
+.hero-button:hover {
+    background-color: transparent;
+    color: #D4AF37;
+}
+
+/* Секции(Sections) */
+section {
+    padding: 4rem 2rem;
+}
+
+/* Заголовки секций(Section titles) */
+.portfolio-title,
+.services-title,
+.contacts-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+    position: relative;
+}
+
+.portfolio-title::after,
+.services-title::after,
+.contacts-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #D4AF37;
+    margin: 0.5rem auto;
+}
+
+/* Портфолио - галерея 2x2(Portfolio - 2x2 gallery) */
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-photo {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.portfolio-photo:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.portfolio-photo:hover .portfolio-image {
+    transform: scale(1.05);
+}
+
+.portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 1.5rem;
+    color: #fff;
+}
+
+.portfolio-caption h3 {
+    font-size: 1.8rem;
+    color: #D4AF37;
+}
+
+/* Услуги - карточки(Services - cards) */
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid #333;
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    border-color: #D4AF37;
+    transform: translateY(-5px);
+}
+
+.service-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+.service-name {
+    font-size: 2rem;
+    color: #D4AF37;
+    margin-bottom: 0.5rem;
+}
+
+.service-header p {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.service-description {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.service-details {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.service-details li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #222;
+}
+
+.detail-label {
+    color: #D4AF37;
+    font-weight: 500;
+}
+
+.service-price {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.price-amount {
+    font-size: 2rem;
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+}
+
+.service-button {
+    display: inline-block;
+    background-color: #D4AF37;
+    color: #000;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid #D4AF37;
+}
+
+.service-button:hover {
+    background-color: transparent;
+    color: #D4AF37;
+}
+
+/* Контакты(Contacts) */
+.contacts-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-details h4 {
+    color: #D4AF37;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    color: #D4AF37;
+    font-weight: 500;
+}
+
+.form-input {
+    padding: 0.8rem 1rem;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+textarea.form-input {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-submit {
+    background-color: #D4AF37;
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.form-submit:hover {
+    background-color: #c19b2c;
+}
+
+/* Подвал(Footer) */
+footer {
+    background-color: #111;
+    padding: 2rem;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.copyright {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.back-to-top {
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.back-to-top:hover {
+    color: #fff;
+}
+
+/* Адаптивность(Responsiveness) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .portfolio-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacts-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Плавная прокрутка(Smooth scrolling) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Добавим заполнение для якорных ссылок, чтобы навигация не перекрывала контент(Add padding for anchor links so navigation doesn't overlap content) */
+section[id] {
+    scroll-margin-top: 80px;
+}
